@@ -6,8 +6,6 @@ import ListItem from '../components/ListItem'
 function Movies() {
   const genres : Genre[] = useGenres();
   const movies : Movie[] = usePopularMovies();
-  console.log(genres)
-  console.log(movies)
   return (
     <>
         {

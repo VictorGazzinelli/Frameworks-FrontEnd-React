@@ -1,31 +1,17 @@
 import React from 'react';
-import { Movie, usePopularMovies } from './hooks/usePopularMovies';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import MovieList  from './components/MovieList'
-import MovieItem  from './components/MovieItem'
+import { RouteDetails, routes } from './utils/routes'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-  const movies = usePopularMovies()
   return (
     <Router>
       <Switch>
-      <Route
-            exact
-            path="/"
-            render={() => {
-                return (
-                  <Redirect to="/movie" />
-                )
-            }}
-          />
-          <Route exact path="/movie">
-            <MovieList />
-          </Route>
-          <Route 
-            path="/movie/:id"
-            render={(props:any) => <MovieItem {...props} />}>
-          </Route>
-        </Switch>
+      {
+        routes.map((routeDetails: RouteDetails) => {
+          return( <Route exact path={routeDetails.path} render={routeDetails.render} />)
+        })
+      }
+      </Switch>
     </Router>
   );
 }
