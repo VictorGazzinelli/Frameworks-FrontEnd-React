@@ -1,4 +1,4 @@
-Alunos: Bruno, Juliana e Victor
+Alunos: Bruno Barolomeu e Victor Gazzinelli
 
 Para rodar :
 
@@ -11,4 +11,3 @@ Depois acesse : localhost:3000
 Site de publicacao:
 
 https://frontend-app-server.herokuapp.com/home
-[https://frontend-app-server.herokuapp.com/home]
